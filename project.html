@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Anemic2D - Professional Sprite Sheet Editor</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="splash-container">
+        <div class="splash-box">
+            <div class="splash-header">
+                <h1>Anemic2D</h1>
+                <div class="splash-subtitle">Professional Sprite Sheet Editor</div>
+            </div>
+            <div class="splash-options">
+                <div class="splash-option" id="newProjectOption">
+                    <h3>New Project</h3>
+                    <p>Create a new sprite sheet project</p>
+                </div>
+                <div class="splash-option" id="recentProjectsOption">
+                    <h3>Recent Projects</h3>
+                    <p>Open a recent project file</p>
+                </div>
+            </div>
+            <div class="splash-form" id="newProjectForm">
+                <div class="form-group">
+                    <label>Project Name</label>
+                    <input type="text" id="projectName" placeholder="MySpriteSheet">
+                </div>
+                <div class="form-group">
+                    <label>Project Location</label>
+                    <div class="form-row">
+                        <input type="text" id="projectLocation" placeholder="Select project folder..." readonly>
+                        <button id="browseBtn" class="secondary-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                                <path d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"/>
+                            </svg>
+                            BROWSE
+                        </button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Canvas Size</label>
+                        <select id="canvasSize">
+                            <option value="256">256x256</option>
+                            <option value="512">512x512</option>
+                            <option value="1024" selected>1024x1024</option>
+                            <option value="2048">2048x2048</option>
+                            <option value="4096">4096x4096</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Grid Size</label>
+                        <select id="gridSize">
+                            <option value="16">16px</option>
+                            <option value="32" selected>32px</option>
+                            <option value="64">64px</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="createProject" class="primary-btn">Create Project</button>
+            </div>
+            <div class="recent-projects" id="recentProjects">
+                <div id="recentProjectsList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="project/projectManager.js"></script>
+</body>
+</html>

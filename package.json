@@ -1,0 +1,40 @@
+{
+  "name": "anemic",
+  "version": "1.0.0-alpha",
+  "description": "The Ultra-Lightweight Texture Packer for Custom Engines",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^41.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "author": "Rozaq125",
+  "license": "MIT",
+  "build": {
+    "appId": "com.rozaq125.anemic",
+    "productName": "Anemic",
+    "icon": "icons/icon.ico",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": ["portable", "nsis"],
+      "icon": "icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true
+    },
+    "files": [
+      "**/*",
+      "!website/**/*",
+      "!node_modules/**/*",
+      "!.git/**/*"
+    ]
+  }
+}
